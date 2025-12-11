@@ -155,11 +155,11 @@ async function main() {
     try {
         document.body.innerHTML = '<div class="container"><h2>Classification de chiffres dessinés</h2><div class="loading-message">Chargement du modèle...</div></div>';
         
-        const session = await ort.InferenceSession.create('./adamw.onnx');
+        const session = await ort.InferenceSession.create('./CNNmodel.onnx');
         
         document.querySelector('.loading-message').textContent = 'Modèle chargé avec succès!';
         
-        // Interface de dessin
+        
         setTimeout(() => {
             const container = document.querySelector('.container');
             container.innerHTML = `
